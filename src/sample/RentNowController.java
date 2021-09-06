@@ -1,5 +1,3 @@
-package sample;
-
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -47,8 +45,8 @@ public class RentNowController implements Initializable {
     @FXML
     Label CnumWarning, CnameWarning, CVVwarning, DateWarning;
 
-    String userId = LoginController.rId;
-    int gid = GameProfileController.gameId;
+    String userId = sample.LoginController.rId;
+    int gid = sample.GameProfileController.gameId;
     double price;
     int discount;
     int days;
@@ -57,13 +55,13 @@ public class RentNowController implements Initializable {
 
     Stage window = new Stage();
 
-    Email_Controller email_controller = new Email_Controller();
+    sample.Email_Controller email_controller = new sample.Email_Controller();
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss");
 
     Image secure = new Image("sample/Icons/secure.png");
     Image card = new Image("sample/Icons/credit-card.png");
 
-    String tier = GameListController.gettier();
+    String tier = sample.GameListController.gettier();
     boolean isDaysok,isCnumOk, isCvvOK,isexpDateOK,iscNameOK;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -190,7 +188,7 @@ public class RentNowController implements Initializable {
                     CnumWarning.setVisible(true);
                 }
             } else {
-                AlertBox.display("Warning", "Παρακαλώ εισάγετε σωστό αριθμό ημερών");
+                sample.AlertBox.display("Warning", "Παρακαλώ εισάγετε σωστό αριθμό ημερών");
 
             }
         } else if (Usertier.startsWith("2") || Usertier.startsWith("3")) {
@@ -198,7 +196,7 @@ public class RentNowController implements Initializable {
             if (DaysTxt.getText().equals("0") || DaysTxt.getText() ==null || (DaysTxt.getText().length()>0)) {
                 SendEmail();
             } else {
-                AlertBox.display("Warning", "Παρακαλώ εισάγετε σωστό αριθμό ημερών");
+                sample.AlertBox.display("Warning", "Παρακαλώ εισάγετε σωστό αριθμό ημερών");
             }
 
         }
@@ -241,7 +239,7 @@ public class RentNowController implements Initializable {
         File file = new File(fileName);
         file.delete();
 
-        AlertBox.display("", "Ευχαριστούμε για την προτίμηση!\n" +
+        sample.AlertBox.display("", "Ευχαριστούμε για την προτίμηση!\n" +
                 "Η απόδειξη σας έχει αποσταλθεί στο email σας!\n" +
                 "Παρακαλώ παραλάβετε το παιχνίδι απο τον υπεύθυνο του καταστήματος");
 

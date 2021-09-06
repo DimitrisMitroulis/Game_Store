@@ -1,4 +1,4 @@
-package sample;
+//package sample;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;

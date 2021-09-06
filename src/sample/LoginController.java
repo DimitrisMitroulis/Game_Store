@@ -87,7 +87,7 @@ public class LoginController {
                 } else {
                     System.out.println("Array is empty");
                     //label1.setText("Username or password is false");
-                    AlertBox.display("Warning","Ο κωδικός ή το Όνομα χρήστη είναι λάθος!");
+                    sample.AlertBox.display("Warning","Ο κωδικός ή το Όνομα χρήστη είναι λάθος!");
 
                 } statement.close();
                 connection.close();
