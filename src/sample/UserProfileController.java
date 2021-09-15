@@ -54,7 +54,7 @@ public class UserProfileController implements Initializable {
 
     @FXML Label TierLbl;
 
-    //===============AUTHOR ARISTOTELIS PALLASIDIS ===============
+
 
 
 

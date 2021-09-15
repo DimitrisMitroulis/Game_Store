@@ -47,7 +47,7 @@ public class UserProfileSettingsController implements Initializable {
 
     @FXML Button SaveBtn,ChangeImageBtn;
 
-    //===============AUTHOR ARISTOTELIS PALLASIDIS ===============
+
 
 
     String rId = LoginController.getrId();
