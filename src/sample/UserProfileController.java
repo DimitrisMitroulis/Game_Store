@@ -59,18 +59,13 @@ public class UserProfileController implements Initializable {
 
 
     public String tier = GameListController.gettier();
-    //list gia ola ta buttons pou tha dimiourghsw
     Button[] gameBtn;
-    // lista me anchor panes pou tha periexoun ta buttons
     AnchorPane[] anchor = new AnchorPane[0];
-    //array fot gameid ot match the button
     public static int[] GameNubmers = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    //url tis eikonas apo tin vash
     String Imgurl;
 
-    //current gid pou gia kathe game fortwnetai sto GameNumbers ,loops counter gia na svinoume ta games meta
+
     int currentgid, id, loops;
-    //oblist gia ta ola ta games pou pairnoume apo tin vash
     ObservableList<Game> games = FXCollections.observableArrayList();
     String rId = LoginController.getrId();
     Connection conn ;
@@ -140,7 +135,7 @@ public class UserProfileController implements Initializable {
 
 
         try {
-            //sql qyery: kanei inner join me ton pinaka rents kai epistrefei ana epilegmeno mina ta games pou uparxoun ston pinaka rents,kanei inner join gia na  parei description
+
             String sql = "select games.gid , games.title ,games.desciption ,games.datereleased,EXTRACT(MONTH FROM Rents.rentdate), Games.title, Games.profileurl \n" +
                     "from Rents \n" +
                     "inner join Games on Rents.gid= Games.gid \n" +
@@ -158,7 +153,7 @@ public class UserProfileController implements Initializable {
                 String desc = results.getString("desciption");
                 String date = results.getString("datereleased");
                 String url = results.getString("profileurl");
-                //kanei insert sthn class games ta stoixeia gia to game apo thn vash
+
                 Game newGame = new Game(title, desc, date, url);
 
                 newGame.setId(id);
@@ -198,7 +193,7 @@ public class UserProfileController implements Initializable {
             ImageView imageView = new ImageView(image);
             imageView.setFitWidth(125d);
             imageView.setFitHeight(160d);
-            //d gia double timh
+
             anchor[i] = new AnchorPane();
             anchor[i].setMinWidth(125d);
             anchor[i].setMinHeight(200d);
@@ -221,7 +216,7 @@ public class UserProfileController implements Initializable {
 
 
             col++;
-            //if for col is for max images per row
+
             if (col == 3) {
                 row++;
                 col = 0;
@@ -231,7 +226,7 @@ public class UserProfileController implements Initializable {
 
             int finalI1 = i;
 
-            //epeidh kaname create to button me javafx gia na kanei  kanei on action eprepe na to kanoume etsi
+
             gameBtn[i].setOnAction(new EventHandler<ActionEvent>() {
 
 
@@ -243,7 +238,7 @@ public class UserProfileController implements Initializable {
                         Stage stage = loadStage(root);
                         GameProfileController stageController = fxmlLoader.getController();
 
-                        //mesw tou pinaka GameNumber kalei thn mrthodo initialize me to id tou paixnidiou pou antistoixei sto button
+
                         stageController.initialize(GameNubmers[finalI1]);
 
                         stage.initOwner(MainPane.getScene().getWindow());

@@ -102,7 +102,7 @@ public class UserProfileSettingsController implements Initializable {
 
 
     public void Refresh() throws SQLException {
-        //ελενχο για αμα τιερ 1 να εξαφανιζει το αλλαγη εικόνας
+
         if (tier.equals("1")){
 
             ChangeImageBtn.setVisible(false);
