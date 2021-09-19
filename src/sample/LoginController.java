@@ -71,10 +71,7 @@ public class LoginController {
                     rId = result.getString("MID");
                     tier = result.getString("tier");
 
-                    System.out.println(rId );
-
-                    //label1.setText("User found,Logging in");
-
+                    System.out.println(rId);
 
 
                     //change screen to Main_screen.fxml

@@ -370,6 +370,7 @@ public class UserProfileSettingsController implements Initializable {
     }
 
 
+
     public void CheckUsername() {
         if (!isUserName(UserNameTxt.getText())) {
             UserNameTxt.setStyle("-fx-text-inner-color: red;");
